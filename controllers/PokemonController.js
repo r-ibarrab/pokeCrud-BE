@@ -51,7 +51,7 @@ const create = async (req,res) =>{
 const createPdf = async (req,res) =>{
     try {
         const pokemon = await Model.findById(req.params.id);
-        if(!pokemon) return res.status(404).json(pokemons);
+        if(!pokemon) return res.status(404).json({});
 
         const stream = res.writeHead(200, {
             'Content-Type': 'application/pdf',
